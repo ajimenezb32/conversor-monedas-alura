@@ -7,8 +7,14 @@ import java.net.http.HttpResponse;
 public class buscadorMoneda {
 
     public Currency getExchangeRate(String baseCurrency, String targetCurrency) {
-        URI endpoint = URI.create("https://v6.exchangerate-api.com/v6/59066b39bea59e528d58cb1d/pair/" 
-                                   + baseCurrency + "/" + targetCurrency);
+String apiKey = "";
+
+URI endpoint = URI.create("https://v6.exchangerate-api.com/v6/" 
+                          + apiKey 
+                          + "/pair/" 
+                          + baseCurrency 
+                          + "/" 
+                          + targetCurrency);
 
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()
